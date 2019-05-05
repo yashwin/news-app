@@ -19,6 +19,12 @@ class SearchForm extends Component {
     });
   }
 
+  componentWillReceiveProps() {
+    this.setState((state, props) => ({
+      value: props.searchTerm
+    }));
+  }
+
   handleSearch(event) {
     event.preventDefault();
     const searchTerm = this.state.value;
@@ -50,7 +56,8 @@ class SearchForm extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  isSearchingNews: state.news.isSearchingNews
+  isSearchingNews: state.news.isSearchingNews,
+  searchTerm: state.news.searchTerm
 })
 
 const mapDispatchToProps = {
