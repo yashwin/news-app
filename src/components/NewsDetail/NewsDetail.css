@@ -1,0 +1,23 @@
+.JustifyCenter {
+	display: flex;
+	justify-content: center
+}
+
+.MarginAuto {
+  margin: auto
+}
+
+.Tags {
+	background: #007bff;
+	padding: 0.1em 0.3em;
+	margin: 0.2em 0.5em;
+	color: #FFF;
+	border-radius: 0.4em;
+	font-weight: 500;
+	white-space: nowrap; 
+	max-width: 15em; 
+	overflow: hidden;
+	text-overflow: ellipsis; 
+	display: inline-block;
+	font-size: 10px;
+}
