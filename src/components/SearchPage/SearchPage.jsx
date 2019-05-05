@@ -44,9 +44,14 @@ class SearchForm extends Component {
           </label>
           <input className="ml-1 btn btn-primary" type="submit" value="Search" disabled={isSearchingNews} />
           {
-            this.state.value.length === 0  &&
-            <div className="ErrorMessage mt-1">
-              You must enter a search text!!
+            !isSearchingNews &&
+            <div>
+              {
+                this.state.value.length === 0 &&
+                <div className="ErrorMessage mt-1">
+                  You must enter a search text!!
+            </div>
+              }
             </div>
           }
         </form>

@@ -5,12 +5,13 @@ import {
   SEARCH_NEWS_LIST_FAILURE
 } from '../redux/actionTypes';
 
-export function searchNewsLists(searchTerm, page = 1, pageSize = 10) {
 
+export function searchNewsLists(searchTerm, page = 1, pageSize = 10) {
   return (dispatch) => {
     dispatch(searchNewsListRequest());
-    const host = "https://content.guardianapis.com";
-    return axios.get(`${host}/search?api-key=test&q=${searchTerm}&show-fields=thumbnail,headline&show-tags=keyword&page=${page}&page-size=${pageSize}`)
+    const host = process.env.REACT_APP_HOST
+    const url = (`${host}/search?api-key=test&q=${searchTerm}&show-fields=thumbnail,headline&show-tags=keyword&page=${page}&page-size=${pageSize}`)
+    return axios.get(url)
       .then((response) => {
         const allNews = response.data.response.results;
         const results = allNews.map((news) => ({
