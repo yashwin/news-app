@@ -19,7 +19,8 @@
 	overflow: hidden;
 	text-overflow: ellipsis; 
 	display: inline-block;
-	font-size: 10px;
+  font-size: 10px;
+  cursor: pointer;
 }
 
 .Card:hover {

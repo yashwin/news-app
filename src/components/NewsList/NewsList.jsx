@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Pagination from "react-js-pagination";
-import { searchNewsLists } from "../../redux/actions";
+import { NewsList as searchNewsLists } from "../../redux/actions";
 import NewsDetail from "../NewsDetail/NewsDetail"
 import './NewsList.css'
 
@@ -41,7 +41,7 @@ class NewsList extends Component {
                   activePage={currentPage}
                   itemsCountPerPage={10}
                   totalItemsCount={totalItems}
-                  pageRangeDisplayed={10}
+                  pageRangeDisplayed={5}
                   prevPageText="Previous"
                   firstPageText="First"
                   lastPageText="Last"
