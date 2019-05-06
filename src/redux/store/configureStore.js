@@ -11,7 +11,7 @@ export const configureStore = () => {
 
   const store = createStore(
     reducer,
-    compose(applyMiddleware(thunk), window.devToolsExtension ? window.devToolsExtension() : f => f)
+    compose(applyMiddleware(thunk), window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__())
   );
 
   return store;
